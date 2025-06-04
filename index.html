@@ -19,6 +19,7 @@
     </form>
       
     </div>
+       <button onclick="joinNewsletter()" class="bg-pink-800 text-pink-200 font-bold text-center px-4 py-2 ">Join Newsletter No Reload!</button>
     <div>
   <div class="bg-sky-50"></div>
   <div class="bg-sky-100"></div>
@@ -43,8 +44,10 @@
         person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
     })
 </script>
+
   <script>
 function joinNewsletter(){
+  console.log('joinNewsletter called');
   posthog.capture('joinNewsLetter', {
     price: new Date(),
     features: {
@@ -57,4 +60,5 @@ function joinNewsletter(){
 
     
   </script>
+
 </html>
