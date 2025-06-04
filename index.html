@@ -15,7 +15,7 @@
       <form>
         
       <input  class="bg-white border-2 border-black rounded text-slate-500">
-      <button class="bg-pink-800 text-pink-200 font-bold text-center px-4 py-2 ">Join Newsletter!</button>
+      <button onclick="joinNewsletter()" class="bg-pink-800 text-pink-200 font-bold text-center px-4 py-2 ">Join Newsletter!</button>
     </form>
       
     </div>
@@ -43,5 +43,18 @@
         person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
     })
 </script>
-  
+  <script>
+function joinNewsletter(){
+  posthog.capture('joinNewsLetter', {
+    price: new Date(),
+    features: {
+        'SSO': true,
+        'Custom branding': true,
+        'Custom domains': false,
+    }
+})
+}
+
+    
+  </script>
 </html>
